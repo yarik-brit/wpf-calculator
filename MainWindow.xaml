@@ -1,0 +1,51 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Calculator" Height="210" Width="250">
+    <Window.DataContext>
+        <local:MainWindowViewModel/>
+    </Window.DataContext>
+    <Grid Margin="0,0,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Input.." HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top"/>
+        <Label HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top" Width="75" Height="65" BorderThickness="1" BorderBrush="Black">
+            <TextBlock Text="{Binding Input}" TextWrapping="Wrap" />
+        </Label>
+
+        <Button Content="➗" Grid.Column="1" HorizontalAlignment="Right" FontSize="15" Margin="0,10,5,0" VerticalAlignment="Top" Width="30" Height="25" Command="{Binding ClickCommandOperation}" CommandParameter="/"/>
+        <Button Content="✖️" Grid.Column="1" HorizontalAlignment="Right" FontSize="15" Margin="0,40,5,0" VerticalAlignment="Top" Width="30" Height="25" Command="{Binding ClickCommandOperation}" CommandParameter="*"/>
+        <Button Content="➖" Grid.Column="1" HorizontalAlignment="Right" FontSize="15" Margin="0,70,5,0" VerticalAlignment="Top" Width="30" Height="25" Command="{Binding ClickCommandOperation}" CommandParameter="-"/>
+        <Button Content="➕" Grid.Column="1" HorizontalAlignment="Right" FontSize="15" Margin="0,100,5,0" VerticalAlignment="Top" Width="30" Height="25" Command="{Binding ClickCommandOperation}" CommandParameter="+"/>
+        <Button Content="=" Grid.Column="1" HorizontalAlignment="Right" FontSize="15" Margin="0,130,5,0" VerticalAlignment="Top" Width="30" Height="25" Command="{Binding ClickCommandOperation}" CommandParameter="=" FontWeight="Bold" FontFamily="Arial Black"/>
+
+        <Button Content="⏪" Grid.Column="1" HorizontalAlignment="Right" FontSize="15" Margin="0,10,40,0" VerticalAlignment="Top" Width="30" Height="25" Command="{Binding ClickCommandOperation}" CommandParameter="delete"/>
+        <Button Content="9" Grid.Column="1" HorizontalAlignment="Right" FontSize="15" Margin="0,40,40,0" VerticalAlignment="Top" Width="30" Height="25" Command="{Binding ClickCommandNumber}" CommandParameter="9"/>
+        <Button Content="6" Grid.Column="1" HorizontalAlignment="Right" FontSize="15" Margin="0,70,40,0" VerticalAlignment="Top" Width="30" Height="25" Command="{Binding ClickCommandNumber}" CommandParameter="6"/>
+        <Button Content="3" Grid.Column="1" HorizontalAlignment="Right" FontSize="15" Margin="0,100,40,0" VerticalAlignment="Top" Width="30" Height="25" Command="{Binding ClickCommandNumber}" CommandParameter="3"/>
+        <Button Content="." Grid.Column="1" HorizontalAlignment="Right" FontSize="15" Margin="0,130,40,0" VerticalAlignment="Top" Width="30" Height="25" Command="{Binding ClickCommandNumber}" CommandParameter="."/>
+
+        <Button Content="C" Grid.Column="1" HorizontalAlignment="Right" FontSize="15" Margin="0,10,75,0" VerticalAlignment="Top" Width="30" Height="25" Command="{Binding ClickCommandOperation}" CommandParameter="C"/>
+        <Button Content="8" Grid.Column="1" HorizontalAlignment="Right" FontSize="15" Margin="0,40,75,0" VerticalAlignment="Top" Width="30" Height="25" Command="{Binding ClickCommandNumber}" CommandParameter="8"/>
+        <Button Content="5" Grid.Column="1" HorizontalAlignment="Right" FontSize="15" Margin="0,70,75,0" VerticalAlignment="Top" Width="30" Height="25" Command="{Binding ClickCommandNumber}" CommandParameter="5"/>
+        <Button Content="2" Grid.Column="1" HorizontalAlignment="Right" FontSize="15" Margin="0,100,75,0" VerticalAlignment="Top" Width="30" Height="25" Command="{Binding ClickCommandNumber}" CommandParameter="2"/>
+        <Button Content="0" Grid.Column="1" HorizontalAlignment="Right" FontSize="15" Margin="0,130,75,0" VerticalAlignment="Top" Width="30" Height="25" Command="{Binding ClickCommandNumber}" CommandParameter="0"/>
+
+        <Button Content="CE" Grid.Column="1" HorizontalAlignment="Right" FontSize="15" Margin="0,10,110,0" VerticalAlignment="Top" Width="30" Height="25" Command="{Binding ClickCommandOperation}" CommandParameter="CE"/>
+        <Button Content="7" Grid.Column="1" HorizontalAlignment="Right" FontSize="15" Margin="0,40,110,0" VerticalAlignment="Top" Width="30" Height="25" Command="{Binding ClickCommandNumber}" CommandParameter="7"/>
+        <Button Content="4" Grid.Column="1" HorizontalAlignment="Right" FontSize="15" Margin="0,70,110,0" VerticalAlignment="Top" Width="30" Height="25" Command="{Binding ClickCommandNumber}" CommandParameter="4"/>
+        <Button Content="1" Grid.Column="1" HorizontalAlignment="Right" FontSize="15" Margin="0,100,110,0" VerticalAlignment="Top" Width="30" Height="25" Command="{Binding ClickCommandNumber}" CommandParameter="1"/>
+        <Button Content="+-" Grid.Column="1" HorizontalAlignment="Right" FontSize="15" Margin="0,130,110,0" VerticalAlignment="Top" Width="30" Height="25" Command="{Binding ClickCommandNumber}" CommandParameter="sign"/>
+
+        <Label Content="Result.." HorizontalAlignment="Left" Margin="5,80,0,0" VerticalAlignment="Top"/>
+        <Label HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" Width="75" Height="70" BorderThickness="1" BorderBrush="Black">
+            <TextBlock Text="{Binding Result}" TextWrapping="Wrap" />
+        </Label>
+    </Grid>
+</Window>
